@@ -7,7 +7,7 @@ INSERT INTO
         description
     )
 VALUES
-($ 1, $ 2, $ 3, $ 4) RETURNING *;
+($1, $2, $3, $4) RETURNING *;
 
 -- name: GetCategory :one
 SELECT
@@ -15,7 +15,7 @@ SELECT
 FROM
     categories
 WHERE
-    id = $ 1
+    id = $1
 LIMIT
     1;
 
@@ -25,22 +25,22 @@ SELECT
 FROM
     categories
 WHERE
-    user_id = $ 1
-    AND type = $ 2
-    AND title LIKE $ 3
-    AND description LIKE $ 4;
+    user_id = $1
+    AND type = $2
+    AND title LIKE $3
+    AND description LIKE $4;
 
 -- name: UpdateCategory :one
 UPDATE
     categories
 SET
-    title = $ 2,
-    description = $ 3
+    title = $2,
+    description = $3
 WHERE
-    id = $ 1 RETURNING *;
+    id = $1 RETURNING *;
 
 --naem: DeleteCategory :exec
 DELETE FROM
     categories
 WHERE
-    id = $ 1;
+    id = $1;

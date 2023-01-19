@@ -2,7 +2,7 @@
 INSERT INTO
     users(username, password, email)
 VALUES
-($ 1, $ 2, $ 3) RETURNING *;
+($1, $2, $3) RETURNING *;
 
 -- name: GetUser :one
 SELECT
@@ -10,7 +10,7 @@ SELECT
 FROM
     users
 WHERE
-    username = $ 1
+    username = $1
 LIMIT
     1;
 
@@ -20,6 +20,6 @@ SELECT
 FROM
     users
 WHERE
-    id = $ 1
+    id = $1
 LIMIT
     1;
